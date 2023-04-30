@@ -1,0 +1,20 @@
+.body {
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../public/Img/Rectangle\ 1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.img-size {
+    width: 100px;
+    height: 40px;
+   background-color: none;
+   
+}
+
+.input {
+    background-color: #E5E5E5;
+}
