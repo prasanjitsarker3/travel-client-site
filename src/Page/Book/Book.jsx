@@ -44,7 +44,7 @@ const Book = () => {
                                     required
                                     type="text"
                                     placeholder="Enter Place"
-                                    defaultValue="Enter Place"
+                                    defaultValue=""
                                 />
                             </Form.Group>
 
