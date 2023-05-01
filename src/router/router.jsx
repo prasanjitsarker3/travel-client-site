@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <TravelBook></TravelBook>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                loader: ({ params }) => fetch(`https://travel-server-sites-prasanjitsarker3.vercel.app/travels/${params.id}`)
             }
         ]
     },
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path: ":id",
                 element: <Book></Book>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                loader: ({ params }) => fetch(`https://travel-server-sites-prasanjitsarker3.vercel.app/travels/${params.id}`)
             }
 
         ]
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoute> <Blog></Blog></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                loader: ({ params }) => fetch(`https://travel-server-sites-prasanjitsarker3.vercel.app/travels/${params.id}`)
             }
             // ,
             // {

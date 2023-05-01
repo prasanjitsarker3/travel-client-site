@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Travel = () => {
     const [travel, setTravel] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/travels')
+        fetch('https://travel-server-sites-prasanjitsarker3.vercel.app/travels')
             .then(res => res.json())
             .then(data => setTravel(data))
     }, [])
