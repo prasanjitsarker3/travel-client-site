@@ -4,6 +4,8 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import first from '../../../public/Img/Rectangle 26.png'
 import second from '../../../public/Img/Rectangle 27.png'
 import third from '../../../public/Img/Rectangle 28.png'
+import map from '../../../public/Img/googleMap.jpeg';
+
 
 const Blog = () => {
     const { id } = useParams();
@@ -11,10 +13,10 @@ const Blog = () => {
     return (
         <div className='text-white'>
             <div>
-                
+
                 <Row>
                     <Col className='p-2' lg={6} xs={12}>
-                    <h2>{blog.name}</h2>
+                        <h2>{blog.name}</h2>
                         {/* <img src={blog.image} alt="" width={'300px'} className='rounded' height={"150px"} srcset="" /> */}
                         <div className='d-flex border justify-content-center align-items-center p-2 gap-2'>
                             <img src={first} alt="" srcset="" width={'190px'} height={"140px"} />
@@ -43,16 +45,9 @@ const Blog = () => {
                                 <p>Cancellation fexibility availiable</p>
                             </div>
                         </div>
-
-
-
-
-
-
-
                     </Col>
-                    <Col lg={6} xs={12}>
-
+                    <Col lg={6} xs={12} className='mt-4 py-3'>
+                        <img src={map} className='rounded' height={'480px'} width={'400px'} alt="" />
                     </Col>
                 </Row>
             </div>

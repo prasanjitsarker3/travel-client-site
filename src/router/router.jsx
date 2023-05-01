@@ -6,38 +6,57 @@ import BookLayout from "../Layout/BookLayout";
 import Book from "../Page/Book/Book";
 import Blog from "../Page/Blog/Blog";
 import BlogLayOut from "../Layout/BlogLayOut";
+import Login from "../Page/Login/Login";
+import LoginLayout from "../Layout/LoginLayout";
+import Register from "../Page/Login/Register";
+import PrivateRoute from "./PrivateRoute";
+import Destination from "../Page/Destination/Destination";
 
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <Main></Main>,
+        path: "/",
+        element: <LoginLayout></LoginLayout>,
         children: [
             {
                 path: '/',
                 element: <Navigate to='travels/1'></Navigate>
             },
             {
-                path: '/travels/:id',
-                element: <TravelBook></TravelBook>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                path: "login",
+                element: <Login></Login>
             },
-            // {
-            //     path: 'blog',
-            //     element: <Blog></Blog>,
-            //     // element: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
-            // }
+            {
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
+                path:"destination",
+                element:<Destination></Destination>
+            }
 
         ]
     },
     {
-        path: '/book',
+        path: 'travels',
+        element: <Main></Main>,
+        children: [
+            {
+                path: ':id',
+                element: <TravelBook></TravelBook>,
+                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+            }
+        ]
+    },
+    {
+        path: 'book',
         element: <BookLayout></BookLayout>,
         children: [
             {
-                path: "/book/:id",
+                path: ":id",
                 element: <Book></Book>,
                 loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
             }
+
         ]
 
     },
@@ -46,14 +65,15 @@ const router = createBrowserRouter([
         element: <BlogLayOut></BlogLayOut>,
         children: [
             {
-                path: "blog",
-                element: <Blog></Blog>
-            },
-            {
                 path: ':id',
-                element: <Blog></Blog>,
+                element: <PrivateRoute> <Blog></Blog></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
             }
+            // ,
+            // {
+            //     path: 'blog/login',
+            //     element: <Login></Login>
+            // }
         ]
     }
 

@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
+
 const Book = () => {
     const books = useLoaderData();
     const [validated, setValidated] = useState(false);
@@ -20,6 +21,7 @@ const Book = () => {
 
         setValidated(true);
     };
+
     return (
         <div className='text-white d-flex justify-content-center align-items-center'>
             <Row>
@@ -76,6 +78,9 @@ const Book = () => {
                         </Link>
 
                     </Form>
+
+                    
+
                 </Col>
             </Row>
         </div>
